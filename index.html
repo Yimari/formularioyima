@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Inscripción a Carrera</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Formulario de Inscripción a Carrera</h1>
+    
+    <form id="registrationForm" onsubmit="return validateForm(event)">
+        <div class="form-section">
+            <h2>Selección de Carrera</h2>
+            <div class="form-group">
+                <label for="carrera" class="required">¿En qué carrera desea inscribirse?</label>
+                <select id="carrera" name="carrera" required>
+                    <option value="">Seleccione una carrera</option>
+                    <option value="ADMINISTRACIÓN">ADMINISTRACIÓN DE EMPRESAS</option>
+                    <option value="BACTERIOLOGÍA">BACTERIOLOGÍA</option>
+                    <option value="CONTADURÍA">CONTADURÍA PÚBLICA</option>
+                    <option value="DERECHO">DERECHO</option>
+                    <option value="ENFERMERÍA">ENFERMERÍA</option>
+                    <option value="SISTEMAS">INGENIERÍA DE SISTEMAS</option>
+                    <option value="QUIRÚRGICA">INSTRUMENTACIÓN QUIRÚRGICA | CARTAGENA</option>
+                    <option value="EDUCACIÓN">LICENCIATURA EN EDUCACIÓN INFANTIL</option>
+                    <option value="MEDICINA">MEDICINA</option>
+                    <option value="ODONTOLOGÍA">ODONTOLOGÍA</option>
+                    <option value="PREHOSPITALARIA">TECNOLOGÍA EN ATENCIÓN PREHOSPITALARIA</option>
+                    <option value="ESTÉTICA">TECNOLOGÍA EN ESTÉTICA Y COSMETOLOGÍA</option>
+                    <option value="DENTAL">TECNOLOGÍA EN MECÁNICA DENTAL</option>
+                    <option value="SOCIAL">TRABAJO SOCIAL</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Información Personal</h2>
+            <div class="form-group">
+                <label for="primerNombre" class="required">Primer Nombre</label>
+                <input type="text" id="primerNombre" name="primerNombre" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="segundoNombre">Segundo Nombre</label>
+                <input type="text" id="segundoNombre" name="segundoNombre">
+            </div>
+            
+            <div class="form-group">
+                <label for="primerApellido" class="required">Primer Apellido</label>
+                <input type="text" id="primerApellido" name="primerApellido" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="segundoApellido" class="required">Segundo Apellido</label>
+                <input type="text" id="segundoApellido" name="segundoApellido" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="fechaNacimiento" class="required">Fecha de Nacimiento</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                <div class="help-text">Formato: DD/MM/AAAA</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="tipoDocumento" class="required">Tipo de Documento</label>
+                <select id="tipoDocumento" name="tipoDocumento" required>
+                    <option value="">Seleccione tipo de documento</option>
+                    <option value="CC">Cédula de Ciudadanía</option>
+                    <option value="CE">Cédula de Extranjería</option>
+                    <option value="TI">Tarjeta de Identidad</option>
+                    <option value="PA">Pasaporte</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="numeroDocumento" class="required">Número de Documento</label>
+                <input type="text" id="numeroDocumento" name="numeroDocumento" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="required">Sexo Biológico</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="sexo" value="M" required> Masculino
+                    </label>
+                    <label>
+                        <input type="radio" name="sexo" value="F"> Femenino
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="estadoCivil" class="required">Estado Civil</label>
+                <select id="estadoCivil" name="estadoCivil" required>
+                    <option value="">Seleccione estado civil</option>
+                    <option value="SOLTERO">Soltero/a</option>
+                    <option value="CASADO">Casado/a</option>
+                    <option value="DIVORCIADO">Divorciado/a</option>
+                    <option value="VIUDO">Viudo/a</option>
+                    <option value="UNION_LIBRE">Unión Libre</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Información de Contacto</h2>
+            <div class="form-group">
+                <label for="correo" class="required">Correo Electrónico</label>
+                <input type="email" id="correo" name="correo" required>
+                <div class="error" id="correoError">Por favor ingrese un correo electrónico válido</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="telefono" class="required">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="celular" class="required">Celular</label>
+                <input type="tel" id="celular" name="celular" required>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Dirección Residencial</h2>
+            <div class="form-group">
+                <label for="pais" class="required">País</label>
+                <select id="pais" name="pais" required>
+                    <option value="">Seleccione país</option>
+                    <option value="CO">Colombia</option>
+                    <option value="OT">Otro</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="ciudad" class="required">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="direccion" class="required">Dirección</label>
+                <input type="text" id="direccion" name="direccion" required>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Encuesta Personal</h2>
+            <div class="form-group">
+                <label>¿Tiene usted hijos?</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="hijos" value="0"> No tengo
+                    </label>
+                    <label>
+                        <input type="radio" name="hijos" value="1"> 1 hijo
+                    </label>
+                    <label>
+                        <input type="radio" name="hijos" value="2"> 2 hijos
+                    </label>
+                    <label>
+                        <input type="radio" name="hijos" value="3"> 3 hijos
+                    </label>
+                    <label>
+                        <input type="radio" name="hijos" value="4"> 4 hijos
+                    </label>
+                    <label>
+                        <input type="radio" name="hijos" value="5+"> Más de 4 hijos
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>¿Se reconoce como parte de alguna de las siguientes poblaciones?</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="poblacion" value="NINGUNA"> Ninguna
+                    </label>
+                    <label>
+                        <input type="radio" name="poblacion" value="INDIGENA"> Indígenas
+                    </label>
+                    <label>
+                        <input type="radio" name="poblacion" value="AFROCOLOMBIANO"> Afrocolombianos
+                    </label>
+                    <label>
+                        <input type="radio" name="poblacion" value="RAIZAL"> Raizales
+                    </label>
+                    <label>
+                        <input type="radio" name="poblacion" value="ROM"> Pueblo ROM o Gitano
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>¿Cuenta con alguna discapacidad?</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="discapacidad" value="NINGUNA"> Ninguna
+                    </label>
+                    <label>
+                        <input type="radio" name="discapacidad" value="MOTRIZ"> Discapacidad motriz
+                    </label>
+                    <label>
+                        <input type="radio" name="discapacidad" value="SORDA"> Discapacidad sorda
+                    </label>
+                    <label>
+                        <input type="radio" name="discapacidad" value="COGNITIVA"> Discapacidad cognitiva
+                    </label>
+                    <label>
+                        <input type="radio" name="discapacidad" value="SORDOCEGUERA"> Sordoceguera
+                    </label>
+                    <label>
+                        <input type="radio" name="discapacidad" value="VOZ"> Trastorno de la voz y el habla
+                    </label>
+                    <label>
+                        <input type="radio" name="discapacidad" value="OTRA"> Otra
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>¿Usted trabaja actualmente?</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="trabajo" value="NO"> No estoy trabajando
+                    </label>
+                    <label>
+                        <input type="radio" name="trabajo" value="EMPLEADO"> Sí, empleado
+                    </label>
+                    <label>
+                        <input type="radio" name="trabajo" value="INDEPENDIENTE"> Sí, independiente
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit">Enviar Formulario</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
